@@ -319,8 +319,9 @@ mcmc_violin <- function(x,
   data <- melt_mcmc(x, value.name = "value")
   n_param <- num_params(data)
 
-  graph <- ggplot(data, set_hist_aes(freq)) +
+  graph <- ggplot(data, aes_(x = ~ value)) +
     geom_histogram(
+      set_hist_aes(freq),
       fill = get_color("mid"),
       color = get_color("mid_highlight"),
       size = .25,

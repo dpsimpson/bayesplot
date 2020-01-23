@@ -98,7 +98,7 @@ space_legend_keys <- function(relative_size = 2, color = "white") {
 # set aesthetic mapping for histograms depending on freq argument
 set_hist_aes <- function(freq = TRUE, ...) {
   if (freq)
-    aes_(x = ~ value, ...)
+    aes_( ...)
   else
-    aes_(x = ~ value, y = ~ ..density.., ...)
+    aes_( y = ~ ..density.., ...)
 }
